@@ -1,0 +1,11 @@
+---
+services:
+  twitch-dvr:
+    build: ./build/
+    image: twitch-dvr
+    container_name: twitch-dvr
+    volumes:
+      - "${DVR_DIR}:/VODs"
+    restart: always
+    env_file:
+      - ./private/.env
